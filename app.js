@@ -43,16 +43,23 @@ const employeeList = [
 ];
 
 const userFunction = prompt('Input a command');
-const msg = '';
 
-//print all array objects
+// print all array objects
 if (userFunction === 'print'){
   for (let i = 0; i < employeeList.length; i++){
     render (employeeList[i]);
   }
 }
 
-//verify employee name with T or F
+// verify employee name with T or F
+if (userFunction === 'verify'){
+  const name = prompt('enter employee name:');
+  for (let i = 0; i < employeeList.length; i++){
+    if employeeList.includes(name)
+    render ('true');
+    else render ('false');
+  }
+}
 
 //lookup employee information
 
