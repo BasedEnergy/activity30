@@ -52,16 +52,23 @@ if (userFunction === 'print'){
 }
 
 // verify employee name with T or F
-if (userFunction === 'verify'){
-  const name = prompt('enter employee name:');
+else if (userFunction === 'verify'){
+  const verifyName = prompt('enter employee name:');
+  let msg = 'false';
   for (let i = 0; i < employeeList.length; i++){
-    if employeeList.includes(name)
-    render ('true');
-    else render ('false');
+    if (employeeList[i].name === verifyName){
+    msg = 'true';
+    }
+    render (msg);
   }
+
 }
 
 //lookup employee information
+else if (userFunction === 'lookup'){
+  const lookupName = prompt('enter employee name:');
+}
+
 
 //contains - prints all employee info if contains string
 
