@@ -29,7 +29,6 @@ const employeeList = [
     officeNum: 213,
     phoneNum: '789-766-5675'
   },
-  ,
   {
     name: 'Ty',
     officeNum: 211,
@@ -47,33 +46,87 @@ const userFunction = prompt('Input a command');
 // print all array objects
 if (userFunction === 'print'){
   for (let i = 0; i < employeeList.length; i++){
-    render (employeeList[i]);
+  render (employeeList[i].name);
+  render (employeeList[i].officeNum);
+  render (employeeList[i].phoneNum);
   }
 }
+
 
 // verify employee name with T or F
 else if (userFunction === 'verify'){
   const verifyName = prompt('enter employee name:');
-  let msg = 'false';
+  msg = 'false';
   for (let i = 0; i < employeeList.length; i++){
     if (employeeList[i].name === verifyName){
     msg = 'true';
     }
-    render (msg);
   }
-
+  render (msg);
 }
 
 //lookup employee information
 else if (userFunction === 'lookup'){
   const lookupName = prompt('enter employee name:');
+  for (let i = 0; i < employeeList.length; i++){
+    if (employeeList[i].name === lookupName){
+      render (employeeList[i].name);
+      render (employeeList[i].officeNum);
+      render (employeeList[i].phoneNum);
+    }
+  }
+}
+
+//not finished
+//contains - prints all employee info if contains string
+else if (userFunction === 'contains'){
+  const containsName = prompt('enter a partial name:');
+  for (let i = 0; i < employeeList.length; i++){
+    if (employeeList[i].includes(containsName)){
+      render (employeeList[i].name);
+      render (employeeList[i].officeNum);
+      render (employeeList[i].phoneNum);
+    }
+  }
+}
+
+//not finished
+//update - prompt for name, let user update field, print new info
+else if (userFunction === 'update'){
+  const updateName = prompt('enter employee name');
+  const updateField = prompt('which field would you like to update?');
+  const updateValue = prompt('what is the new value?');
+
 }
 
 
-//contains - prints all employee info if contains string
-
-//update - prompt for name, let user update field, print new info
-
 // add employee info to list
+else if (userFunction === 'add'){
+  const newName = prompt('enter new employee name');
+  const newOffice = prompt('enter new office number');
+  const newNumber = prompt('enter new telephone number');
+  var newEmployee = {
+    name: newName,
+    officeNum: newOffice,
+    phoneNum: newNumber
+  }
+  employeeList.push(newEmployee);
+  for (let i = 0; i < employeeList.length; i++){
+    render (employeeList[i].name);
+    render (employeeList[i].officeNum);
+    render (employeeList[i].phoneNum);
+  }
+}
 
 // delete object from array
+else if (userFunction === 'delete') {
+  const deleteName = prompt('which employee to delete?');
+  for (let i = 0; i < employeeList.length; i++) {
+    if (deleteName === employeeList[i].name) {
+      employeeList.splice(deleteName, 1);
+    }
+    render(employeeList[i].name);
+    render(employeeList[i].officeNum);
+    render(employeeList[i].phoneNum);
+  }
+}
