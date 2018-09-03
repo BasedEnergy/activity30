@@ -82,7 +82,7 @@ else if (userFunction === 'lookup'){
 else if (userFunction === 'contains'){
   const containsName = prompt('enter a partial name:');
   for (let i = 0; i < employeeList.length; i++){
-    if (employeeList[i].includes(containsName)){
+      if (employeeList[i].includes(containsName)){
       render (employeeList[i].name);
       render (employeeList[i].officeNum);
       render (employeeList[i].phoneNum);
@@ -96,9 +96,13 @@ else if (userFunction === 'update'){
   const updateName = prompt('enter employee name');
   const updateField = prompt('which field would you like to update?');
   const updateValue = prompt('what is the new value?');
-
+  for (let i = 0; i < employeeList.length; i++){
+    if (updateName === employeeList[i].name);
+    
+      
+    
+  }
 }
-
 
 // add employee info to list
 else if (userFunction === 'add'){
