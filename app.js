@@ -77,21 +77,18 @@ else if (userFunction === 'lookup'){
   }
 }
 
-//not finished
 //contains - prints all employee info if contains string
 else if (userFunction === 'contains'){
-  const containsName = prompt('enter a partial name:');
-  for (let i = 0; i < employeeList.length; i++){
-    if (employeeList[i].includes(containsName)){
-    render (employeeList[i].name);
-    render (employeeList[i].officeNum);
-    render (employeeList[i].phoneNum);
+    const containsName = prompt('enter a partial name:');
+    for (let i = 0; i < employeeList.length; i++){
+        if (employeeList[i].name.includes(containsName)){
+        render (employeeList[i].name);
+        render (employeeList[i].officeNum);
+        render (employeeList[i].phoneNum);
     }
   }
 }
 
-
-//not finished
 //update - prompt for name, let user update field, print new info
 else if (userFunction === 'update'){
   const updateName = prompt('enter employee name');
@@ -140,6 +137,21 @@ else if (userFunction === 'delete') {
     if (deleteName === employeeList[i].name) {
       employeeList.splice(deleteName, 1);
     }
+    render(employeeList[i].name);
+    render(employeeList[i].officeNum);
+    render(employeeList[i].phoneNum);
+  }
+}
+
+// delete all men from employeeList
+else if (userFunction === "utopify") {
+const toxicEnvironment = prompt('want to make the workplace less toxic?');
+if (toxicEnvironment === 'yes'){
+  employeeList.splice(1, 1);
+  employeeList.splice(3, 1);
+  employeeList.splice(4, 1);
+  }
+  for (let i = 0; i < employeeList.length; i++) {
     render(employeeList[i].name);
     render(employeeList[i].officeNum);
     render(employeeList[i].phoneNum);
