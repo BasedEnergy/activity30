@@ -145,8 +145,8 @@ else if (userFunction === 'delete') {
 
 // delete all men from employeeList
 else if (userFunction === "utopify") {
-const toxicEnvironment = prompt('want to make the workplace less toxic?');
-if (toxicEnvironment === 'yes'){
+const utopiaList = prompt('want to make the workplace more chill?');
+if (utopiaList === 'yes'){
   employeeList.splice(1, 1);
   employeeList.splice(3, 1);
   employeeList.splice(4, 1);
